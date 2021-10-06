@@ -1,0 +1,9 @@
+.userStyle {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.cardStyle {
+    font-weight: bold;
+    text-decoration: underline dotted;
+}
