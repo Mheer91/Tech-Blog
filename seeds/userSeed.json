@@ -1,0 +1,21 @@
+[
+    {
+        "username": "WebDevPro",
+        "password": "ranger",
+        "creation_date": "2014-02-14"
+    },
+    {
+        "username": "JBGoode",
+        "password": "ranger",
+        "creation_date": "2019-03-15"
+    },
+    {
+        "username": "RonaldJenkins",
+        "password": "ranger"
+    },
+    {
+        "username": "JeffErickson",
+        "password": "ranger",
+        "creation_date": "2021-09-12"
+    }
+]

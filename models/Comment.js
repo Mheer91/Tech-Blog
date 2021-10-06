@@ -1,6 +1,5 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
-const bcrypt = require('bcrypt');
 
 class Comment extends Model {}
 
@@ -32,6 +31,10 @@ Comment.init(
                 model: 'post',
                 key: 'id',
             },
+        },
+        creation_date: {
+            type: DataTypes.DATEONLY,
+            defaultValue: Sequelize.NOW,
         },
     },
     {

@@ -1,0 +1,27 @@
+[
+    {
+        "post_title": "Web Dev Necessities Vol. 1: HTML",
+        "post_body": "HTML test text",
+        "user_id": "1"
+    },
+    {
+        "post_title": "Web Dev Necessities Vol. 2: Javascript",
+        "post_body": "Javascript test text",
+        "user_id": "1"
+    },
+    {
+        "post_title": "How to save a file",
+        "post_body": "Click the save button",
+        "user_id": "2"
+    },
+    {
+        "post_title": "Hi Son!",
+        "post_body": "Just got a new computer son, is this how you do the emails?",
+        "user_id": "3"
+    },
+    {
+        "post_title": "Test 4",
+        "post_body": "Test",
+        "user_id": "4"
+    }
+]

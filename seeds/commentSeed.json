@@ -1,0 +1,22 @@
+[
+    {
+        "comment_body": "HTML is EZ",
+        "post_id": "1",
+        "user_id": "2"
+    },
+    {
+        "comment_body": "JS is my favorite language!",
+        "post_id": "2",
+        "user_id": "4"
+    },
+    {
+        "comment_body": "Test",
+        "post_id": "3",
+        "user_id": "1"
+    },
+    {
+        "comment_body": "I can't find my son jerry. Does anyone know his email?",
+        "post_id": "4",
+        "user_id": "3"
+    }
+]

@@ -26,6 +26,10 @@ Post.init(
                 key: 'id',
             },
         },
+        creation_date: {
+            type: DataTypes.DATEONLY,
+            defaultValue: Sequelize.NOW,
+        },
     },
     {
         sequelize,
