@@ -6,7 +6,11 @@
           <p>{{post_body}}</p>
         </div>
         <div class="card-action">
-          <a href="/post/{{id}}">Comments</a>
+          <a class="btn" href="/post/{{id}}">Comments</a>
+          {{#eq sesId user.id}}
+          <button class="btn">Edit</button>
+          <button class="btn">Delete</button>    
+          {{/eq}}
           <a href="/" class="right hide-on-med-and-down"><span class="userStyle">{{user.username}}</span> on {{creation_date}}</a>
         </div>
       </div>

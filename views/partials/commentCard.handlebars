@@ -6,7 +6,13 @@
           <p>{{comment_body}}</p>
         </div>
         <div class="card-action">
-          <a href="/" class=""><span class="userStyle">{{user.username}}</span> on {{creation_date}}</a>
+          {{#eq sesId user.id}}
+          <a class="btn">Edit</a>
+          <a class="btn">Delete</a>
+          <a href="/" class="right"><span class="userStyle">{{user.username}}</span> {{creation_date}}</a>
+          {{else}}
+          <a href="/" class=""><span class="userStyle">{{user.username}}</span> {{creation_date}}</a>
+          {{/eq}}
         </div>
       </div>
     </div>

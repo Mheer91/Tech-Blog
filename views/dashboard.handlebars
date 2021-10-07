@@ -1,0 +1,17 @@
+<div class="container">
+    {{#eq userId user.id}}
+    <h1>Welcome, {{user.username}}</h1>
+    {{else}}
+    <h1>{{user.username}}'s Profile</h1>
+    {{/eq}}
+
+    <h3>Posts</h3>
+    {{#each user.posts}}
+    {{> postCard user=../user sesId=../userId}}
+    {{/each}}
+
+    <h3>Comments</h3>
+    {{#each user.comments}}
+    {{> commentCard user=../user sesId=../userId}}
+    {{/each}}
+</div>
