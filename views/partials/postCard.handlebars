@@ -8,8 +8,8 @@
         <div class="card-action">
           <a class="btn" href="/post/{{id}}">Comments</a>
           {{#eq sesId user.id}}
-          <button class="btn">Edit</button>
-          <button class="btn">Delete</button>    
+          <a class="btn waves-effect edit-post" id="postEdit{{id}}" data-id="{{id}}">Edit</a>
+          <a class="btn waves-effect delete-post" id="postDelete{{id}}" data-id="{{id}}">Delete</a>    
           {{/eq}}
           <a href="/" class="right hide-on-med-and-down"><span class="userStyle">{{user.username}}</span> on {{creation_date}}</a>
         </div>

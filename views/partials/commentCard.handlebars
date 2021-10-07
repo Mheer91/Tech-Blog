@@ -7,8 +7,8 @@
         </div>
         <div class="card-action">
           {{#eq sesId user.id}}
-          <a class="btn">Edit</a>
-          <a class="btn">Delete</a>
+          <a class="btn waves-effect edit-comment" id="edit{{id}}" data-id="{{id}}">Edit</a>
+          <a class="btn waves-effect delete-comment" id="deleteComment{{id}}" data-id="{{id}}">Delete</a>
           <a href="/" class="right"><span class="userStyle">{{user.username}}</span> {{creation_date}}</a>
           {{else}}
           <a href="/" class=""><span class="userStyle">{{user.username}}</span> {{creation_date}}</a>

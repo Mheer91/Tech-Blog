@@ -8,8 +8,12 @@
               <p>{{post.post_body}}</p>
             </div>
             <div class="card-action">
-              <a href="/" class=""><span class="userStyle">{{post.user.username}}</span> on {{post.creation_date}}</a>
-              <button data-target="modal1" class="btn modal-trigger">Add Comment</button>
+              {{#eq userId post.user.id}}
+          <a class="btn waves-effect edit-post" id="postEdit{{id}}" data-id="{{id}}">Edit</a>
+          <a class="btn waves-effect delete-post" id="postDelete{{id}}" data-id="{{id}}">Delete</a>    
+          {{/eq}}
+          <button data-target="modal1" class="btn modal-trigger">Add Comment</button>
+              <a href="/" class="right"><span class="userStyle">{{post.user.username}}</span> {{post.creation_date}}</a>
             </div>
           </div>
         </div>
@@ -28,7 +32,10 @@
   </div>
     
     {{#each comment}}
-    {{> commentCard user=../post/user sesId=../userId}}
+    {{> commentCard poster=../post/user sesId=../userId}}
     {{/each}}
 
 </div>
+
+<script src="/js/post.js"></script>
+<script src="/js/comment.js"></script>
