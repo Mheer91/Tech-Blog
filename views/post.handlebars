@@ -1,36 +1,46 @@
 <div class="container">
     <div class="row">
         <div class="">
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title center-align"><span class="cardStyle">{{post.post_title}}</span></span>
-              <a href="/" class=""><span class="userStyle">{{post.user.username}}</span> on {{post.creation_date}}</a>
-              <p>{{post.post_body}}</p>
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title center-align"><span class="cardStyle">{{post.post_title}}</span></span>
+                    <p>{{post.post_body}}</p>
+                </div>
+                <div class="card-action">
+                    {{#eq userId post.user.id}}
+                    <a class="btn waves-effect edit-post" id="postEdit{{id}}" data-id="{{id}}">Edit</a>
+                    <a class="btn waves-effect delete-post" id="postDelete{{id}}" data-id="{{id}}">Delete</a>
+                    {{/eq}}
+                    <a data-target="modal1" class="btn modal-trigger">Add Comment</a>
+                    <a href="/" class="right"><span class="userStyle">{{post.user.username}}</span>
+                        {{post.creation_date}}</a>
+                </div>
             </div>
-            <div class="card-action">
-              {{#eq userId post.user.id}}
-          <a class="btn waves-effect edit-post" id="postEdit{{id}}" data-id="{{id}}">Edit</a>
-          <a class="btn waves-effect delete-post" id="postDelete{{id}}" data-id="{{id}}">Delete</a>    
-          {{/eq}}
-          <button data-target="modal1" class="btn modal-trigger">Add Comment</button>
-              <a href="/" class="right"><span class="userStyle">{{post.user.username}}</span> {{post.creation_date}}</a>
-            </div>
-          </div>
         </div>
     </div>
 
     <div class="divider"></div>
 
     <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
+        <div class="modal-content">
+            <h4>Creating New Comment...</h4>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="commentBody" class="materialize-textarea"></textarea>
+                            <label for="commentBody">Comment Body</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="/post/{{post.id}}" class="modal-close waves-effect waves-green btn-flat" id="submitComment">Add
+                Comment</a>
+        </div>
     </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>
-    
+
     {{#each comment}}
     {{> commentCard poster=../post/user sesId=../userId}}
     {{/each}}

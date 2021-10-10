@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req,res) => {
+router.get('/', async (req, res) => {
     try {
         const postData = await Post.findAll({
             include: { model: User },
@@ -12,14 +12,14 @@ router.get('/', async (req,res) => {
 
         console.log(post);
 
-        res.render('home', { post, loggedIn: req.session.loggedIn, userId: req.session.user_id  })
+        res.render('home', { post, loggedIn: req.session.loggedIn, userId: req.session.user_id })
     }
     catch (err) {
         res.status(500).json(err);
     }
 });
 
-router.get('/post/:id', async (req,res) => {
+router.get('/post/:id', async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
             include: { model: User }
@@ -48,7 +48,7 @@ router.get('/post/:id', async (req,res) => {
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
-            include: [{ model: Post}, { model: Comment}]
+            include: [{ model: Post }, { model: Comment }]
         });
 
         const user = userData.get({ plain: true });
@@ -72,7 +72,7 @@ router.get('/dashboard/:id', withAuth, async (req, res) => {
 
         console.log(user)
 
-        res.render('dashboard', { user, loggedIn: req.session.loggedIn, userId: req.session.user_id  })
+        res.render('dashboard', { user, loggedIn: req.session.loggedIn, userId: req.session.user_id })
     }
     catch (err) {
         res.status(500).json(err);

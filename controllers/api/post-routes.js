@@ -32,11 +32,15 @@ router.get('/:id', async (req, res) => {
 
 });
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
 
-    Post.create(req.body)
-    .then((post) => res.status(200).json(post))
-    .catch((err) => res.status(400).json(err));
+    Post.create({
+        post_title: req.body.post_title,
+        post_body: req.body.post_body,
+        user_id: req.session.user_id,
+    })
+        .then((newPost) => res.status(200).json(newPost))
+        .catch((err) => res.status(400).json(err));
 
 });
 
@@ -47,8 +51,8 @@ router.put('/:id', (req, res) => {
             id: req.params.id,
         },
     })
-    .then((post) => res.status(200).json(post))
-    .catch((err) => res.status(400).json(err));
+        .then((post) => res.status(200).json(post))
+        .catch((err) => res.status(400).json(err));
 
 });
 
@@ -59,8 +63,8 @@ router.delete('/:id', (req, res) => {
             id: req.params.id,
         },
     })
-    .then((post) => res.status(200).json(post))
-    .catch((err) => res.status(400).json(err));
+        .then((post) => res.status(200).json(post))
+        .catch((err) => res.status(400).json(err));
 
 });
 

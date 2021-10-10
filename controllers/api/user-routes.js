@@ -33,8 +33,8 @@ router.get('/:id', async (req, res) => {
 router.post('/', (req, res) => {
 
     User.create(req.body)
-    .then((user) => res.status(200).json(user))
-    .catch((err) => res.status(400).json(err));
+        .then((user) => res.status(200).json(user))
+        .catch((err) => res.status(400).json(err));
 
 });
 
@@ -46,8 +46,8 @@ router.put('/:id', (req, res) => {
         },
         individualHooks: true
     })
-    .then((user) => res.status(200).json(user))
-    .catch((err) => res.status(400).json(err));
+        .then((user) => res.status(200).json(user))
+        .catch((err) => res.status(400).json(err));
 });
 
 router.delete('/:id', (req, res) => {
@@ -57,8 +57,8 @@ router.delete('/:id', (req, res) => {
             id: req.params.id,
         },
     })
-    .then((deletedUser) => res.status(200).json(deletedUser))
-    .catch((err) => res.status(400).json(err));
+        .then((deletedUser) => res.status(200).json(deletedUser))
+        .catch((err) => res.status(400).json(err));
 });
 
 router.post('/login', async (req, res) => {

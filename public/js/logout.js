@@ -8,7 +8,7 @@ const logout = async () => {
         document.location.replace('/');
     }
     else {
-        alert(response.statusText);
+        M.toast({ html: 'Error logging out, please try again!' })
     }
 };
 

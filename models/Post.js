@@ -1,7 +1,7 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Post extends Model {}
+class Post extends Model { }
 
 Post.init(
     {
@@ -13,7 +13,7 @@ Post.init(
         },
         post_title: {
             type: DataTypes.STRING,
-            allowNull: false, 
+            allowNull: false,
         },
         post_body: {
             type: DataTypes.STRING,
