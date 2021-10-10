@@ -1,19 +1,28 @@
 <div class="container">
     <div class="row">
         <div class="">
-            <div class="card blue-grey darken-1">
+            <div class="card magenta z-depth-5">
                 <div class="card-content white-text">
                     <span class="card-title center-align"><span class="cardStyle">{{post.post_title}}</span></span>
                     <p>{{post.post_body}}</p>
                 </div>
                 <div class="card-action">
                     {{#eq userId post.user.id}}
-                    <a class="btn waves-effect edit-post" id="postEdit{{id}}" data-id="{{id}}">Edit</a>
-                    <a class="btn waves-effect delete-post" id="postDelete{{id}}" data-id="{{id}}">Delete</a>
+                    <a class="btn waves-effect edit-post sunsetorange black-text" id="postEdit{{id}}" data-id="{{id}}">Edit</a>
+                    <a class="btn waves-effect delete-post sunsetorange black-text" id="postDelete{{id}}"
+                        data-id="{{id}}">Delete</a>
                     {{/eq}}
-                    <a data-target="modal1" class="btn modal-trigger">Add Comment</a>
-                    <a href="/" class="right"><span class="userStyle">{{post.user.username}}</span>
+                    {{#if loggedIn}}
+                        <a data-target="modal1" class="btn modal-trigger sunsetorange pulse waves-effect black-text">Add
+                            Comment</a>
+                    {{/if}}
+                    <a href="/" class="hide-on-med-and-down right sunsetorange-text"><span class="userStyle">{{post.user.username}}</span>
                         {{post.creation_date}}</a>
+                    <br class="hide-on-large-only">
+                    <br class="hide-on-large-only">
+                    <a href="/" class="hide-on-large-only leftsunsetorange-text"><span class="userStyle">{{post.user.username}}</span>
+                        {{post.creation_date}}</a>
+                    <br class="hide-on-large-only">
                 </div>
             </div>
         </div>
@@ -21,24 +30,23 @@
 
     <div class="divider"></div>
 
-    <div id="modal1" class="modal">
+    <div id="modal1" class="modal magenta">
         <div class="modal-content">
-            <h4>Creating New Comment...</h4>
+            <h4 class="white-text">Creating New Comment...</h4>
             <div class="row">
                 <form class="col s12">
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea id="commentBody" class="materialize-textarea"></textarea>
+                            <textarea id="commentBody" class="materialize-textarea white-text"></textarea>
                             <label for="commentBody">Comment Body</label>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
-        <div class="modal-footer">
-            <a href="/post/{{post.id}}" class="modal-close waves-effect waves-green btn-flat" id="submitComment">Add
-                Comment</a>
-        </div>
+        <a href="/post/{{post.id}}" class="btn-flat magneta modal-close waves-effect waves-green white-text right"
+            id="submitComment">Add
+            Comment</a>
     </div>
 
     {{#each comment}}

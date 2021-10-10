@@ -2,65 +2,68 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <title>Tech Blog</title>
 </head>
 
-<body>
+<body class="redpink">
   <nav>
-    <div class="nav-wrapper white">
-      <a href="/" class="brand-logo black-text">Tech-Blog</a>
+    <div class="nav-wrapper sunsetpurple">
+      <a href="/" class="brand-logo white-text">Tech-Blog</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="/" class="black-text">Home</a></li>
-        <li><a href="/dashboard" class="black-text">Dashboard</a></li>
+        <li><a href="/" class="white-text">Home</a></li>
+        <li><a href="/dashboard" class="white-text">Dashboard</a></li>
         {{#if loggedIn}}
-        <li><a href="/login" class="black-text" id="logout">Logout</a></li>
+        <li><a href="/login" class="white-text" id="logout">Logout</a></li>
         {{else}}
-        <li><a href="/login" class="black-text">Login</a></li>
+        <li><a href="/login" class="white-text">Login</a></li>
         {{/if}}
       </ul>
     </div>
   </nav>
 
-  <ul id="mobile-demo" class="sidenav hide-on-large-only">
+  <ul id="mobile-demo" class="sidenav hide-on-large-only redpink">
     <li>
       <div class="user-view">
-        <div class="background black"></div>
+        <div class="background sunsetpurple"></div>
         <h4 class="white-text">Tech Blog</h4>
         <br>
       </div>
     </li>
-    <li><a class="waves-effect" href="/"><i class="material-icons">home</i>Home</a></li>
-    <li><a class="waves-effect" href="/dashboard"><i class="material-icons">cloud</i>Dashboard</a></li>
+    <li><a class="waves-effect black-text" href="/"><i class="material-icons black-text">home</i>Home</a></li>
+    <li><a class="waves-effect black-text" href="/dashboard"><i class="material-icons black-text">dashboard</i>Dashboard</a></li>
     <li>
       <div class="divider"></div>
     </li>
     {{#if loggedIn}}
-    <li><a class="waves-effect" href="/login" id="logoutMobile"><i class="material-icons">cloud</i>Logout</a></li>
+    <li><a class="waves-effect black-text" href="/login" id="logoutMobile"><i class="material-icons black-text">blur_off</i>Logout</a></li>
     {{else}}
-    <li><a class="waves-effect" href="/login"><i class="material-icons">cloud</i>Login</a></li>
+    <li><a class="waves-effect black-text" href="/login"><i class="material-icons black-text">blur_on</i>Login</a></li>
     {{/if}}
   </ul>
 
 
   {{{body}}}
 
-<br>
-<main></main>
-  <footer class="page-footer black white-text">
+  <br>
+  <main></main>
+  <footer class="page-footer sunsetpurple">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Tech-Blog</h5>
-          <p class="grey-text text-lighten-4"></p>
+          <p class="black-text"></p>
         </div>
       </div>
     </div>
     <div class="footer-copyright">
-      <div class="footer-body container">
+      <div class="footer-body container white-text">
         © 2014 Copyright Nick Vielbig's Forehead
       </div>
     </div>

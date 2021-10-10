@@ -3,15 +3,40 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    font-family: 'Share Tech Mono', monospace;
   }
-  
+
 main {
     flex: 1 0 auto;
   }
       
+.brightYellow {
+    background-color: #fffe01;
+}
 
+.magenta {
+    background-color: #600538;
+}
 
+.magenta-text {
+    color: #600538 !important;
+}
 
+.redpink {
+    background-color: #e83b36;
+}
+
+.sunsetpurple {
+    background-color: #460a40;
+}
+
+.sunsetorange {
+    background-color: #ff8606;
+}
+
+.sunsetorange-text {
+    color: #ff8606 !important;
+}
 
 .userStyle {
     font-weight: bold;
@@ -21,4 +46,9 @@ main {
 .cardStyle {
     font-weight: bold;
     text-decoration: underline dotted;
+}
+
+.username {
+    font-weight: bolder;
+    text-decoration: underline;
 }

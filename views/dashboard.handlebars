@@ -1,9 +1,9 @@
 <div class="container">
     {{#eq userId user.id}}
-    <h1>Welcome, <span class="username">{{user.username}}</span> </h1>
-    <a data-target="modal2" class="btn waves-effect modal-trigger" id="newPost">Create Post</a>
+    <h1>Welcome, <span class="brightYellow pulse username">{{user.username}}</span> </h1>
+    <a data-target="modal2" class="btn sunsetorange waves-effect modal-trigger pulse black-text" id="newPost">Create Post</a>
     {{else}}
-    <h1>{{user.username}}'s Profile</h1>
+    <h1><span class="brightYellow pulse username">{{user.username}}'s Profile</span></h1>
     {{/eq}}
 
 
