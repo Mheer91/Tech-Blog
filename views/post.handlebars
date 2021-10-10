@@ -8,24 +8,54 @@
                 </div>
                 <div class="card-action">
                     {{#eq userId post.user.id}}
-                    <a class="btn waves-effect edit-post sunsetorange black-text" id="postEdit{{id}}" data-id="{{id}}">Edit</a>
+                    <a data-target="modal4" class="btn waves-effect edit-post sunsetorange black-text modal-trigger"
+                        id="postEdit{{id}}" data-id="{{id}}">Edit</a>
                     <a class="btn waves-effect delete-post sunsetorange black-text" id="postDelete{{id}}"
                         data-id="{{id}}">Delete</a>
                     {{/eq}}
                     {{#if loggedIn}}
-                        <a data-target="modal1" class="btn modal-trigger sunsetorange pulse waves-effect black-text">Add
-                            Comment</a>
+                    <a data-target="modal1" class="btn modal-trigger sunsetorange pulse waves-effect black-text">Add
+                        Comment</a>
                     {{/if}}
-                    <a href="/" class="hide-on-med-and-down right sunsetorange-text"><span class="userStyle">{{post.user.username}}</span>
+                    <a href="/" class="hide-on-med-and-down right sunsetorange-text"><span
+                            class="userStyle">{{post.user.username}}</span>
                         {{post.creation_date}}</a>
                     <br class="hide-on-large-only">
                     <br class="hide-on-large-only">
-                    <a href="/" class="hide-on-large-only leftsunsetorange-text"><span class="userStyle">{{post.user.username}}</span>
+                    <a href="/" class="hide-on-large-only left sunsetorange-text"><span
+                            class="userStyle">{{post.user.username}}</span>
                         {{post.creation_date}}</a>
                     <br class="hide-on-large-only">
                 </div>
             </div>
         </div>
+    </div>
+    <div id="modal4" class="modal magenta">
+        <div class="modal-content">
+            <h4 class="white-text">Editing "{{post.post_title}}"</h4>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="postTitleEdit{{post.id}}"
+                                class="materialize-textarea white-text">{{post.post_title}}</textarea>
+                            <label for="postTitleEdit">Post Title</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="postBodyEdit{{post.id}}"
+                                class="materialize-textarea white-text">{{post.post_body}}</textarea>
+                            <label for="postBodyEdit">Post Body</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <a href="/dashboard" class="modal-close waves-effect waves-green btn-flat edit-post white-text right"
+            id="postEdit" data-id="{{post.id}}">Update</a>
+
     </div>
 
     <div class="divider"></div>

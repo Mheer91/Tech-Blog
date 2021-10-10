@@ -16,7 +16,7 @@ Post.init(
             allowNull: false,
         },
         post_body: {
-            type: DataTypes.STRING,
+            type: DataTypes.JSON,
             allowNull: false,
         },
         user_id: {

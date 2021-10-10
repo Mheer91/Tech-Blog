@@ -8,38 +8,43 @@
             <div class="card-action">
                 <a class="btn sunsetorange waves-effect black-text" href="/post/{{id}}">View Post</a>
                 {{#eq sesId user.id}}
-                <a data-target="modal{{id}}" class="btn sunsetorange waves-effect modal-trigger black-text" id="postEdit{{id}}">Edit</a>
-                <a class="btn sunsetorange waves-effect delete-post black-text" id="postDelete{{id}}" data-id="{{id}}">Delete</a>
+                <a data-target="modal{{id}}" class="btn sunsetorange waves-effect modal-trigger black-text"
+                    id="postEdit{{id}}">Edit</a>
+                <a class="btn sunsetorange waves-effect delete-post black-text" id="postDelete{{id}}"
+                    data-id="{{id}}">Delete</a>
                 {{/eq}}
-                <a href="/dashboard/{{user.id}}" class="right hide-on-med-and-down sunsetorange-text"><span class="userStyle">{{user.username}}</span> on
+                <a href="/dashboard/{{user.id}}" class="right hide-on-med-and-down sunsetorange-text"><span
+                        class="userStyle">{{user.username}}</span> on
                     {{creation_date}}</a>
             </div>
         </div>
     </div>
 </div>
 
-<div id="modal{{id}}" class="modal">
+<div id="modal{{id}}" class="modal magenta">
     <div class="modal-content">
-        <h4>Editing "{{post_title}}"</h4>
+        <h4 class="white-text">Editing "{{post_title}}"</h4>
         <div class="row">
             <form class="col s12">
                 <div class="row">
                     <div class="input-field col s12">
-                        <textarea id="postTitleEdit{{id}}" class="materialize-textarea"></textarea>
+                        <textarea id="postTitleEdit{{id}}"
+                            class="materialize-textarea white-text">{{post_title}}</textarea>
                         <label for="postTitleEdit">Post Title</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <textarea id="postBodyEdit{{id}}" class="materialize-textarea"></textarea>
+                        <textarea id="postBodyEdit{{id}}"
+                            class="materialize-textarea white-text">{{post_body}}</textarea>
                         <label for="postBodyEdit">Post Body</label>
                     </div>
                 </div>
             </form>
         </div>
     </div>
-    <div class="modal-footer">
-        <a href="/dashboard" class="modal-close waves-effect waves-green btn-flat edit-post" id="postEdit"
-            data-id="{{id}}">Update</a>
-    </div>
+
+    <a href="/dashboard" class="modal-close waves-effect waves-green btn-flat edit-post white-text right" id="postEdit"
+        data-id="{{id}}">Update</a>
+
 </div>
