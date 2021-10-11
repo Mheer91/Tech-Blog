@@ -29,6 +29,9 @@ https://github.com/Mheer91/Tech-Blog
 https://tech-blog-yey.herokuapp.com/
 
 ## Screenshots
+![TechBlogLanding](https://user-images.githubusercontent.com/80427770/136712432-4b9e242d-f18f-4b60-b0bf-d24d84ab7c81.jpg)
+![TechBlogDashboard](https://user-images.githubusercontent.com/80427770/136712435-89f9a88a-b0e6-4adc-b688-97d979e37ca4.jpg)
+![techbloglogin](https://user-images.githubusercontent.com/80427770/136712437-e726d49b-f0ca-4c6c-84f0-71b725d69e37.jpg)
 
 ## Created By
 Michael Heer https://github.com/Mheer91
